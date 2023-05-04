@@ -30,8 +30,11 @@
       <h5>{{card.original_title}}</h5>
 
       <span v-if="card.original_language === 'en'"> <img class="flag" src="../../assets/img/en.png" alt="flag"></span>
-
       <span v-if="card.original_language === 'it'"> <img class="flag" src="../../assets/img/it.png" alt="flag"></span>
+      <span v-if="card.original_language === 'de'"> <img class="flag" src="../../assets/img/de.png" alt="flag"></span>
+      <span v-if="card.original_language === 'es'"> <img class="flag" src="../../assets/img/es.png" alt="flag"></span>
+      <span v-if="card.original_language === 'fr'"> <img class="flag" src="../../assets/img/fr.png" alt="flag"></span>
+      <span v-if="card.original_language === 'jp' || 'ja'"> <img class="flag" src="../../assets/img/jp.png" alt="flag"></span>
 
       <span v-else>  {{card.original_language}}   </span>
 
@@ -46,7 +49,7 @@
 <style lang="scss" scoped>
 
 .card-container{
-  width: calc(100% / 6);
+  width: calc(100% / 5);
   display: flex;
   flex-direction: column;
   margin: 20px;
@@ -54,6 +57,7 @@
     width: 40px;
     margin: 5px;
   }
+  
 }
 
 </style>
