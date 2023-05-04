@@ -1,15 +1,30 @@
   <script>
+  import FilmContainer from './FilmContainer.vue'
+
+
   export default {
-    name:'Main'
+    name:'Main', 
+    components:{
+    FilmContainer
+    }
   }
   </script>
 
 
 <template>
-  <h1>Main</h1>
+  <section>
+    
+
+    <FilmContainer />
+    
+  </section>
 </template>
 
 
 <style lang="scss" scoped>
+section{
+  background-color: brown;
+  height: 100vh;
+}
 
 </style>

@@ -26,7 +26,7 @@ export default {
 
 
 
-  <input v-model="store.searchString" @keyup.enter="enterClick()" type="text" >
+  <input v-model="store.searchString" @keyup.enter="enterClick()" type="text" placeholder="Cerca un Film" >
 
 
 </section>
@@ -41,6 +41,9 @@ section{
   justify-content: space-between;
   img{
     width: 150px;
+  }
+  input{
+    margin-right: 30px;
   }
 }
 </style>
