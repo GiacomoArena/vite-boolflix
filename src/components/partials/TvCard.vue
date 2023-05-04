@@ -1,6 +1,6 @@
   <script>
     import {store} from "../../data/store";
-    
+
   export default {
     name:'TvCard',
     props:{
@@ -13,14 +13,12 @@
         voteString:'',
       }
     },
-    methods:{
-      
-    },
     computed:{
       getStars(){
+        let icon = '<i class="fa-solid fa-star"></i>'
         let votes = Math.ceil(this.vote) /2
         for (let i = 0; i < votes; i++) {
-          this.voteString += '<i class="fa-solid fa-star"></i>'
+          this.voteString += icon
         }
         return this.voteString
       }
