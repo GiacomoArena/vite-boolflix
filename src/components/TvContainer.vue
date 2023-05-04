@@ -17,7 +17,8 @@ export default {
 
 
 <template>
-<h1>Tv Series</h1>
+  <h1 v-if="store.searchString === ''"></h1>
+  <h1 v-else>Tv Series</h1>
 <section>
   <TvCard 
   v-for="(card, i) in store.resultTvArray.results" 
@@ -39,5 +40,8 @@ justify-content: center;
 width: 80%;
 height: 100%;
 margin: 0 auto;
+h1{
+  margin-left: 15px;
+}
 }
 </style>
