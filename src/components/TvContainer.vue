@@ -17,10 +17,10 @@ export default {
 
 
 <template>
-<h1>Film</h1>
+<h1>Tv Series</h1>
 <section>
   <TvCard 
-  v-for="(card, i) in store.resultMovieArray.results" 
+  v-for="(card, i) in store.resultTvArray.results" 
   :key="i"
   :card="card"
   />

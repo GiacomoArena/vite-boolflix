@@ -1,11 +1,13 @@
   <script>
   import FilmContainer from './FilmContainer.vue'
+  import TvContainer from './TvContainer.vue'
 
 
   export default {
     name:'Main', 
     components:{
-    FilmContainer
+    FilmContainer,
+    TvContainer
     }
   }
   </script>
@@ -16,6 +18,8 @@
     
 
     <FilmContainer />
+
+    <TvContainer />
     
   </section>
 </template>
