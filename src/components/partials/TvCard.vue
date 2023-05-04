@@ -26,8 +26,8 @@
     <img v-else :src="`https://image.tmdb.org/t/p/w500/${card.backdrop_path}`
 " alt="card">
     <div class="card-info">
-      <h5>{{card.title}}</h5>
-      <h5>{{card.original_title}}</h5>
+      <h5>{{card.name}}</h5>
+      <h5>{{card.original_name}}</h5>
       <h5>{{card.original_language}} </h5>
       <h5>{{card.vote_average}} </h5>
     </div>

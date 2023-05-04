@@ -28,7 +28,7 @@
 <style lang="scss" scoped>
 section{
   background-color: brown;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 </style>
