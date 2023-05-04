@@ -8,11 +8,23 @@
     },
     data(){
       return{
-        store
+        store,
+        vote: this.card.vote_average,
+        voteString:'',
       }
     },
-    computed:{
-      
+    methods:{
+      getStars(){
+        let icon = '<i class="fa-solid fa-star"></i> '
+        let votes = Math.ceil(this.vote) /2
+        for (let i = 0; i < votes; i++) {
+          this.voteString += icon
+        }
+        return this.voteString
+      }
+    },
+    mounted(){
+      this.getStars()
     }
   }
 
@@ -41,7 +53,7 @@
       <span v-else>  {{card.original_language}}   </span>
 
 
-      <h5>{{card.vote_average}} </h5>
+      <div class="stars"  v-html="voteString"></div>
     </div>
   </div>
 
