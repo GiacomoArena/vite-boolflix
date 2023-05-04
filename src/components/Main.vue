@@ -26,8 +26,11 @@
 
 
 <style lang="scss" scoped>
+@import '../scss/partials/variables';
 section{
-  background-color: brown;
+  padding-top: 70px;
+  background-color: $netflix-black;
+  color: white;
   min-height: 100vh;
 }
 

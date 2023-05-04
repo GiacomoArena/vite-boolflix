@@ -33,15 +33,23 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-
+@import '../scss/partials/variables';
 
 section{
+  position: fixed;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  width: 100%;
+  height: 70px;
+  background-color:  #14141496;
+  z-index: 1000;
   img{
     width: 150px;
+    margin: 15px;
   }
   input{
+    width: 300px;
     margin-right: 30px;
   }
   div{
