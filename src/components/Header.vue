@@ -12,9 +12,7 @@ export default {
     }
   },
   methods:{
-    enterClick(){
-      console.log(store.searchString);
-    }
+    
   }
 }
 </script>
@@ -25,10 +23,11 @@ export default {
   <img src="../assets/img/logo-boolflix.png" alt="logo">
 
 
+  <div>
+    <input @keyup.enter="$emit('startSearch')" v-model.trim="store.searchString"  type="text" placeholder="Cerca un Film"  >
+  
 
-  <input v-model="store.searchString" @keyup.enter="enterClick()" type="text" placeholder="Cerca un Film" >
-
-
+  </div>
 </section>
 
 </template>
@@ -44,6 +43,9 @@ section{
   }
   input{
     margin-right: 30px;
+  }
+  div{
+    margin-right: 15px;
   }
 }
 </style>

@@ -1,11 +1,16 @@
   <script>
-
+  import {store} from "../data/store";
   import Card from './partials/Card.vue'
 
   export default {
     name:'FilmContainer',
     components:{
       Card
+    },
+    data(){
+      return{
+        store
+      }
     }
   }
   </script>
@@ -14,11 +19,11 @@
 <template>
   <section>
 
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
+    <Card 
+    v-for="(card, i) in store.resultArray.results" 
+    :key="i"
+    :card="card"
+    />
   </section>
 
   

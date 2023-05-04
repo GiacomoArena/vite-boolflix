@@ -3,20 +3,24 @@
     name:'Card',
     props:{
       card: Object,
+    },
+    copmputed:{
+      
     }
   }
-  </script>
 
+  // ${card.results.backdrop_path}
+  </script>
 
 <template>
   
   <div class="card-container">
-    <img  src="../../assets/img/it.png" alt="card">
+    <img  :src="`https://image.tmdb.org/t/p/w300/${card.backdrop_path}`" alt="card">
     <div class="card-info">
-      <h5>Titolo</h5>
-      <h5>Titolo originale </h5>
-      <h5>lingua </h5>
-      <h5>voto </h5>
+      <h5>{{card.title}}</h5>
+      <h5>{{card.original_title}}</h5>
+      <h5>{{card.original_language}} </h5>
+      <h5>{{card.vote_average}} </h5>
     </div>
   </div>
 
@@ -30,9 +34,7 @@
   display: flex;
   flex-direction: column;
   margin: 20px;
-  img{
-    width: 100px;
-  }
+  
 }
 
 </style>

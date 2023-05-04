@@ -17,18 +17,22 @@
       }
     },
     methods:{
-      getapi(){
-
+      getApi(){
         axios.get(store.searchApi, {
         params:{
-          query: store.searchString
+          query: store.searchString,
         }
       }).then(result => {
         store.resultArray = result.data;
-        console.log(store.resultArray);
+
+        console.log('result array',store.resultArray);
+        console.log('result string',store.searchString);
       });
       }
-    }
+    },
+    mounted(){
+    this.getApi();
+  }
   }
 
   </script>
@@ -36,9 +40,10 @@
 
 <template>
   
-  <Header />
+  <Header  @startSearch="getApi"/>
 
   <Main />
+
 </template>
 
 
