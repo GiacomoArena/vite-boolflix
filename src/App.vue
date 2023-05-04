@@ -1,7 +1,8 @@
   <script>
   import Header from './components/Header.vue';
   import Main from './components/Main.vue';
-
+  import axios from "axios";  
+  import {store} from "./data/store";
 
 
   export default {
@@ -9,6 +10,17 @@
     components:{
       Header,
       Main
+    },
+    data(){
+      return{
+        store
+      }
+    },
+    methods:{
+      getapi(){
+
+        axios.get
+      }
     }
   }
 
@@ -23,6 +35,7 @@
 </template>
 
 
-<style>
+<style lang="scss" >
+@use './scss/main.scss' as * ;
 
 </style>
