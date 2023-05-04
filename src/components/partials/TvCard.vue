@@ -28,7 +28,13 @@
     <div class="card-info">
       <h5>{{card.name}}</h5>
       <h5>{{card.original_name}}</h5>
-      <h5>{{card.original_language}} </h5>
+
+      <span v-if="card.original_language === 'en'"> <img class="flag" src="../../assets/img/en.png" alt="flag"></span>
+
+      <span v-if="card.original_language === 'it'"> <img class="flag" src="../../assets/img/it.png" alt="flag"></span>
+
+      <span v-else>  {{card.original_language}}   </span>
+
       <h5>{{card.vote_average}} </h5>
     </div>
   </div>
@@ -43,7 +49,10 @@
   display: flex;
   flex-direction: column;
   margin: 20px;
-  
+  .flag{
+    width: 40px;
+    margin: 5px;
+  }
 }
 
 </style>
