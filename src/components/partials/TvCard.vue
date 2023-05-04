@@ -1,6 +1,6 @@
   <script>
     import {store} from "../../data/store";
-
+    
   export default {
     name:'TvCard',
     props:{
@@ -8,11 +8,22 @@
     },
     data(){
       return{
-        store
+        store,
+        vote: this.card.vote_average,
+        voteString:'',
       }
     },
-    computed:{
+    methods:{
       
+    },
+    computed:{
+      getStars(){
+        let votes = Math.ceil(this.vote) /2
+        for (let i = 0; i < votes; i++) {
+          this.voteString += '<i class="fa-solid fa-star"></i>'
+        }
+        return this.voteString
+      }
     }
   }
 
@@ -27,7 +38,9 @@
 " alt="card">
     <div class="card-info">
       <h5>{{card.name}}</h5>
-      <h5>{{card.original_name}}</h5>
+
+      <h5 v-if="card.original_name === card.name"></h5>
+      <h5 v-else>{{card.original_name}}</h5>
 
       <span v-if="card.original_language === 'en'"> <img class="flag" src="../../assets/img/en.png" alt="flag"></span>
       <span v-if="card.original_language === 'it'"> <img class="flag" src="../../assets/img/it.png" alt="flag"></span>
@@ -36,7 +49,7 @@
       <span v-if="card.original_language === 'fr'"> <img class="flag" src="../../assets/img/fr.png" alt="flag"></span>
       <span v-if="card.original_language === 'jp' || 'ja'"> <img class="flag" src="../../assets/img/jp.png" alt="flag"></span>
 
-      <h5>{{card.vote_average}} </h5>
+      <div class="stars"  >{{getStars}}</div>
     </div>
   </div>
 

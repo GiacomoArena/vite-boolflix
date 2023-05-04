@@ -27,7 +27,9 @@
 " alt="card">
     <div class="card-info">
       <h5>{{card.title}}</h5>
-      <h5>{{card.original_title}}</h5>
+
+      <h5 v-if="card.original_title === card.title"></h5>
+      <h5 v-else>{{card.original_title}}</h5>
 
       <span v-if="card.original_language === 'en'"> <img class="flag" src="../../assets/img/en.png" alt="flag"></span>
       <span v-if="card.original_language === 'it'"> <img class="flag" src="../../assets/img/it.png" alt="flag"></span>
