@@ -19,7 +19,14 @@
     methods:{
       getapi(){
 
-        axios.get
+        axios.get(store.searchApi, {
+        params:{
+          query: store.searchString
+        }
+      }).then(result => {
+        store.resultArray = result.data;
+        console.log(store.resultArray);
+      });
       }
     }
   }
