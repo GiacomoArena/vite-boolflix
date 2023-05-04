@@ -17,8 +17,8 @@
 
 
 <template>
+  <h1>Film</h1>
   <section>
-
     <Card 
     v-for="(card, i) in store.resultArray.results" 
     :key="i"
