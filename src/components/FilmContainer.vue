@@ -1,11 +1,11 @@
   <script>
   import {store} from "../data/store";
-  import Card from './partials/Card.vue'
+  import MovieCard from './partials/MovieCard.vue'
 
   export default {
     name:'FilmContainer',
     components:{
-      Card
+      MovieCard
     },
     data(){
       return{
@@ -19,8 +19,8 @@
 <template>
   <h1>Film</h1>
   <section>
-    <Card 
-    v-for="(card, i) in store.resultArray.results" 
+    <MovieCard 
+    v-for="(card, i) in store.resultMovieArray.results" 
     :key="i"
     :card="card"
     />

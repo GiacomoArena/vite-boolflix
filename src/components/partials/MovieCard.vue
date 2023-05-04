@@ -2,7 +2,7 @@
     import {store} from "../../data/store";
 
   export default {
-    name:'Card',
+    name:'MovieCard',
     props:{
       card: Object,
     },

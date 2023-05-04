@@ -18,16 +18,26 @@
     },
     methods:{
       getApi(){
+        axios.all([
         axios.get(store.searchApi, {
-        params:{
-          query: store.searchString,
-        }
-      }).then(result => {
-        store.resultArray = result.data;
+          params:{
+            query: store.searchString,
+          }
+        }),
+          axios.get(store.tvSearchApi, {
+          params:{
+            query: store.searchString,
+          }
+        })
+          ]).then(axios.spread((movieResult, tvResult) => {
+          
+        store.resultMovieArray = movieResult.data;
+        store.resultTvArray = tvResult.data;
 
-        console.log('result array',store.resultArray);
+        console.log('result array',store.resultMovieArray);
+        console.log(' TVarray',store.resultTvArray);
         console.log('result string',store.searchString);
-      });
+      }));
       }
     },
     mounted(){
