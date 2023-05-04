@@ -1,7 +1,19 @@
-# Vue 3 + Vite
+# **BoolFlix**
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## **Milestone 1**:  
+- I started the exercise by creating the basic layout by creating on the header in addition to the logo, a search-bar that will save the value of what we write on the variable `store.searchString` (which initially will be empty).
 
-## Recommended IDE Setup
+- on App.vue I create my getApi function that will have the query parameter (the parameter we use to search for the movie by name) equal to `store.searchString`.
+```
+getApi(){
+        axios.get(store.searchApi, {
+        params:{
+          query: store.searchString,
+        }
+      }).then(result => {
+        store.resultArray = result.data;
+```
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- after which through a `$emit` on the click of the 'Enter' key we will call the `getApi` function with the query values we transcribed. 
+in the components folder I create the structure of the movie card container, and through `props and a v-for` I generate the cards dynamically by assigning the required values.
+
