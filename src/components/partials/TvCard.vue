@@ -13,15 +13,18 @@
         voteString:'',
       }
     },
-    computed:{
+    methods:{
       getStars(){
-        let icon = '<i class="fa-solid fa-star"></i>'
+        let icon = '<i class="fa-solid fa-star"></i> '
         let votes = Math.ceil(this.vote) /2
         for (let i = 0; i < votes; i++) {
           this.voteString += icon
         }
         return this.voteString
       }
+    },
+    mounted(){
+      this.getStars()
     }
   }
 
@@ -47,7 +50,7 @@
       <span v-if="card.original_language === 'fr'"> <img class="flag" src="../../assets/img/fr.png" alt="flag"></span>
       <span v-if="card.original_language === 'jp' || 'ja'"> <img class="flag" src="../../assets/img/jp.png" alt="flag"></span>
 
-      <div class="stars"  >{{getStars}}</div>
+      <div class="stars"  v-html="voteString"></div>
     </div>
   </div>
 

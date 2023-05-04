@@ -12,7 +12,9 @@ export default {
     }
   },
   methods:{
-    
+    reloadPage() {
+      location.reload();
+    }
   }
 }
 </script>
@@ -20,7 +22,7 @@ export default {
 <template>
 
 <section>
-  <img src="../assets/img/logo-boolflix.png" alt="logo">
+  <img @click="reloadPage()" src="../assets/img/logo-boolflix.png" alt="logo">
 
 
   <div>
@@ -47,6 +49,7 @@ section{
   img{
     width: 150px;
     margin: 15px;
+    cursor: pointer;
   }
   input{
     width: 300px;
