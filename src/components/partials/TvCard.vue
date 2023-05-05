@@ -34,8 +34,8 @@
 <template>
   
   <div class="card-container">
-    <img class="tv-img" v-if="card.backdrop_path === null" src="../../assets/img/no_images.png" alt="card">
-    <img class="tv-img" v-else :src="`https://image.tmdb.org/t/p/w500/${card.backdrop_path}`
+    <img class="card-img" v-if="card.backdrop_path === null" src="../../assets/img/no_images.jpg" alt="card">
+    <img class="card-img" v-else :src="`https://image.tmdb.org/t/p/w500/${card.backdrop_path}`
 " alt="card">
     <div class="card-info">
       <h5>{{card.name}}</h5>
@@ -60,16 +60,19 @@
 <style lang="scss" scoped>
 
 .card-container{
-  width: calc(100% / 5);
+  //width: calc(100% / 5);
   display: flex;
   flex-direction: column;
   margin: 20px;
+  .card-img{
+    width: 300px;
+    height: 150px;
+  }
   .flag{
     width: 40px;
     margin: 5px;
   }
-  .tv-img{
-  }
+  
 }
 
 </style>
