@@ -28,3 +28,23 @@ params:{
           }
 ```
 - then I create a container (as in the case of movies and related cards), and a card that will have more or less the same characteristics as the 'Movie Card ' being careful in the props when we name titles that have a different acronym 
+
+## **Milestone 3**:
+- for transferring the images to the relative card inside the cards that are cycled and dynamically generated, I put two img tags one having a `` :src ``dynamic with a `` tamplate literals`` that has as its base a string with `` TMDB base URL:`` followed by `` /w500/ ``(the chosen size) and ``{card.backdrop_path}`` that is the path to the images that we dynamically generate provided by the Api 
+
+- so on the first img tag we will have a v-if that if
+``v-if="card.backdrop_path === null"`` then a replacement img will be shown `v-else` the corresponding image taken from the API
+
+- As for the stars, I took the dynamic value `card.vote_average` which is a number ranging from 1 to 10.
+Inside a methods I created the following function 
+```
+getStars(){
+        let icon = '<i class="fa-solid fa-star"></i> '
+        let votes = Math.ceil(this.vote) /2
+        for (let i = 0; i < votes; i++) {
+          this.voteString += icon
+        }
+        return this.voteString
+      }
+```
+- which takes the vote value approximated by excess and divided by two to thus have a number ranging from 1 to 5 and through a for loop repeated for the generated number corresponding to the card I generate the icons . then I call the function on the mounted and the value of the stars which is inserted inside `voteString:''` on the tamplate in order to display it.
