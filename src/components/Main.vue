@@ -29,6 +29,7 @@
 @import '../scss/partials/variables';
 section{
   padding-top: 70px;
+  padding-bottom: 100px;
   background-color: $netflix-black;
   color: white;
   min-height: 100vh;
