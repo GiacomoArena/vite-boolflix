@@ -115,25 +115,6 @@ mounted(){
     opacity: 0;
     font-size: 1px;
   }
- /* //da sistemare
-  .card-container:hover .info-text{
-    opacity: 1;
-    font-size: 16px;
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    position: absolute;
-    bottom: 25px;
-    z-index: 99999;
-    background-color: rgba(168, 161, 161, 0.493);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    right: 100px;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  //da sistemare*/
   .card-info{
     overflow-y:auto ;
     -webkit-box-shadow: 0px 0px 13px 4px #000000;

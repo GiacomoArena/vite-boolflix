@@ -48,3 +48,7 @@ getStars(){
       }
 ```
 - which takes the vote value approximated by excess and divided by two to thus have a number ranging from 1 to 5 and through a for loop repeated for the generated number corresponding to the card I generate the icons . then I call the function on the mounted and the value of the stars which is inserted inside `voteString:''` on the tamplate in order to display it.
+
+## **Milestone 4**:
+- Fix the graphic part by making it more like the original web app 
+adding searchbar animations and card info as soon as you click on it 
