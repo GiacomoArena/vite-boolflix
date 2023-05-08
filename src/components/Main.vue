@@ -1,13 +1,13 @@
   <script>
-  import FilmContainer from './FilmContainer.vue'
-  import TvContainer from './TvContainer.vue'
+  import FilmContainer from './FilmContainer.vue';
+  import TvContainer from './TvContainer.vue';
 
 
   export default {
     name:'Main', 
     components:{
     FilmContainer,
-    TvContainer
+    TvContainer,
     }
   }
   </script>

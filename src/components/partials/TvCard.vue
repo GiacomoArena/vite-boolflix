@@ -13,24 +13,32 @@ data(){
     voteString:'',
     zeroStars:'<i class="fa-regular fa-star"></i>',
     flag:false,
+    hover:false,
+    click: false
   }
 },
 methods:{
   flagChange(){
-    this.flag = !this.flag
-  },
-  flagChangeFalse(){
-    this.flag = false
-  },
-  getStars(){
-    let icon = '<i class="fa-solid fa-star"></i> '
-    let votes = Math.ceil(this.vote) /2
-    for (let i = 0; i < votes; i++) {
-      this.voteString += icon
-    }
-    return this.voteString
-  }
-},
+        this.flag = !this.flag
+      },
+      hoveringfalse(){
+        this.hover = false
+      },
+      clickingtrue(){
+        this.click = !this.click
+      },
+      flagChangeFalse(){
+        this.flag = false
+      },
+      getStars(){
+        let icon = '<i class="fa-solid fa-star"></i> '
+        let votes = Math.ceil(this.vote) /2
+        for (let i = 0; i < votes; i++) {
+          this.voteString += icon
+        }
+        return this.voteString
+      }
+    },
 mounted(){
   this.getStars()
 }
@@ -40,7 +48,14 @@ mounted(){
 
 <template>
   
-  <div class="card-container" @mouseleave="flagChangeFalse()">
+  <div class="card-container" @mouseleave="[flagChangeFalse(), clickingtrue()]"
+    @click="clickingtrue()"
+    @mouseover="hoveringfalse()"
+    >
+    <span class="pop-up-title"
+    :class="{'d-none': click === true}"
+    >{{card.name}}</span>
+
     <img @click="flagChange()"   class="card-img" v-if="card.backdrop_path === null" src="../../assets/img/no_images.jpg" alt="card">
     <img @click="flagChange()" class="card-img" v-else :src="`https://image.tmdb.org/t/p/w500/${card.backdrop_path}`
 " alt="card">
@@ -78,6 +93,21 @@ mounted(){
   display: flex;
   flex-direction: column;
   margin: 20px;
+  &:hover .pop-up-title{
+    bottom: -15px;
+    left: -50px;
+    opacity: 1;
+    z-index: 10;
+    
+
+  }
+  .pop-up-title{
+    position: absolute;
+    color: white;
+    transition: all 2s;
+    opacity: 0;
+    pointer-events: none;
+  }
   .overview{
     display: none;
   }

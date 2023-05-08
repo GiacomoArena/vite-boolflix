@@ -13,11 +13,19 @@
         voteString:'',
         zeroStars:'<i class="fa-regular fa-star"></i>',
         flag:false,
+        hover:false,
+        click: false
       }
     },
     methods:{
       flagChange(){
         this.flag = !this.flag
+      },
+      hoveringfalse(){
+        this.hover = false
+      },
+      clickingtrue(){
+        this.click = !this.click
       },
       flagChangeFalse(){
         this.flag = false
@@ -40,7 +48,14 @@
 
 <template>
   
-  <div class="card-container" @mouseleave="flagChangeFalse()">
+  <div class="card-container" @mouseleave="[flagChangeFalse(), clickingtrue()]"
+    @click="clickingtrue()"
+    @mouseover="hoveringfalse()"
+    >
+    <span class="pop-up-title"
+    :class="{'d-none': click === true}"
+    >{{card.title}}</span>
+
     <img @click="flagChange()"   class="card-img" v-if="card.backdrop_path === null" src="../../assets/img/no_images.jpg" alt="card">
     <img @click="flagChange()" class="card-img" v-else :src="`https://image.tmdb.org/t/p/w500/${card.backdrop_path}`
 " alt="card">
@@ -78,6 +93,21 @@
   display: flex;
   flex-direction: column;
   margin: 20px;
+  &:hover .pop-up-title{
+    bottom: -15px;
+    left: -50px;
+    opacity: 1;
+    z-index: 10;
+    
+
+  }
+  .pop-up-title{
+    position: absolute;
+    color: white;
+    transition: all 2s;
+    opacity: 0;
+    pointer-events: none;
+  }
   .overview{
     display: none;
   }
@@ -85,25 +115,7 @@
     opacity: 0;
     font-size: 1px;
   }
- /* //da sistemare
-  .card-container:hover .info-text{
-    opacity: 1;
-    font-size: 16px;
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    position: absolute;
-    bottom: 25px;
-    z-index: 99999;
-    background-color: rgba(168, 161, 161, 0.493);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    right: 100px;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  //da sistemare*/
+
   .card-info{
     overflow-y:auto ;
     -webkit-box-shadow: 0px 0px 13px 4px #000000;
@@ -120,7 +132,7 @@
     background-color: rgba(34, 30, 30, 0.945);
     cursor: pointer;
     right: 0;
-    z-index: 5;
+    z-index: 15;
     h5{
       margin-top: 3px;
       font-size: 15px;

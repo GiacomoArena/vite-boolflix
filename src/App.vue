@@ -28,8 +28,8 @@
           params:{
             query: store.searchString,
           }
-        })
-          ]).then(axios.spread((movieResult, tvResult) => {
+        }),
+          ]).then(axios.spread((movieResult, tvResult,) => {
           
         store.resultMovieArray = movieResult.data;
         store.resultTvArray = tvResult.data;
