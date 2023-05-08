@@ -35,12 +35,12 @@ export default {
     <div class="info-button">
         <div class="user">
           <img class="users" src="../assets/img/user.jpg" alt="user">  
-          <i class="fa-solid fa-caret-down"></i>  
+          <i class="fa-solid fa-caret-down down"></i>  
         </div>
         <ul >
-          <li><a href="#">Gestisci profili</a></li>
-          <li><a href="#">Account</a></li>
-          <li><a href="#">Assistenza</a></li>
+          <li><a href="#"><i class="fa-solid fa-pen"></i> Gestisci profili</a></li>
+          <li><a href="#"><i class="fa-regular fa-user"></i> Account</a></li>
+          <li><a href="#"><i class="fa-solid fa-question"></i> Assistenza</a></li>
         </ul>
     </div>
   </div>
@@ -80,13 +80,32 @@ section{
         border-radius: 10px;
       }
       ul{
+        display: none;
+        flex-direction: column;
+        width: 200px;
+        background-color: rgba(19, 17, 17, 0.945);
+        color: white;
         position: absolute;
-        top: 75px;
+        top: 70px;
         right: 5px;
+        list-style: none;
+        padding: 0;
+        a{
+          margin-left: 10px;
+          color: white;
+          text-decoration: none;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+        
+        i{
+          padding-left: 10px;
+        }
       }
-     /* &:hover ul{
-        display: block;
-      }*/
+      &:hover ul{
+        display: flex;
+      }
     }
   }
   .search-bar{
